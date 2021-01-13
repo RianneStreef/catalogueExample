@@ -1,0 +1,12 @@
+<div *ngIf="displayCategory; else categories">
+  <app-category-menu
+    [displayCategory]="displayCategory"
+    [categoryIdToDisplay]="categoryIdToDisplay"
+    (categoryDisplayClicked)="toggleCategoryDisplay($event)"
+  >
+  </app-category-menu>
+</div>
+
+<ng-template #categories>
+  <app-categories></app-categories>
+</ng-template>
