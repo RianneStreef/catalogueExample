@@ -1,0 +1,10 @@
+<ul class="categories">
+  <li
+    *ngFor="let category of categories"
+    class="category-card"
+    (click)="toggleCategoryDisplay(true)"
+  >
+    <h2>{{ category.name }}</h2>
+    <img src="assets/img/{{ category.id }}.jpg" />
+  </li>
+</ul>
