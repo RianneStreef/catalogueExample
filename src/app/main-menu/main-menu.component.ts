@@ -20,12 +20,12 @@ export class MainMenuComponent implements OnInit {
     this.categoryDisplayClicked.emit(boolValueDisplayCategory);
   }
 
-  // setCategoryId (categoryId) {
-  //   this.categoryIdToDisplay.emit(this.categoryId);
-  // }
+  setCategoryId (categoryId) {
+    console.log('category to display: ' + this.categoryIdToDisplay);
+    this.categorySet.emit(categoryId);
+  }
 
-  // re-add to main-menu template
-  // (categorySet)="setCategoryId($event)" 
+ 
 
 
   constructor() { }
