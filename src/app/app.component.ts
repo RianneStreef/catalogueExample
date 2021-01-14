@@ -29,7 +29,7 @@ export class AppComponent {
 
     setCategoryId (categoryId : number) {
       this.categoryIdToDisplay = categoryId;
-      console.log('category to display ' + this.displayCategory);
+      console.log('category to display ' + this.categoryIdToDisplay);
     }
 
 }

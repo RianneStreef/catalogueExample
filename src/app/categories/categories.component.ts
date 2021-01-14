@@ -24,7 +24,13 @@ export class CategoriesComponent implements OnInit {
     console.log('toggleDisplayCategory clicked, value: ' + this.boolValueDisplayCategory);
     this.categoryDisplayClicked.emit(boolValueDisplayCategory);
   }
-  
+
+
+  setCategoryId (categoryId) {
+    console.log('category to display: ' + this.categoryIdToDisplay);
+    this.categorySet.emit(categoryId);
+  }
+
   constructor() {}
 
   ngOnInit(): void {

@@ -3,6 +3,7 @@
     *ngFor="let category of categories"
     class="category-card"
     (click)="toggleCategoryDisplay(true)"
+    (click)="setCategoryId(category.id)"
   >
     <h2>{{ category.name }}</h2>
     <img src="assets/img/{{ category.id }}.jpg" />
