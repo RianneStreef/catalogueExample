@@ -14,6 +14,8 @@ export class AppComponent {
   categoryIdToDisplay = 1;
 
   toggleCategoryDisplay(boolValueDisplayCategory : boolean | null) {
+    console.log('displayCategory value is ' + this.displayCategory);
+
     if (boolValueDisplayCategory === true) {
       this.displayCategory = true;
     }
@@ -23,7 +25,6 @@ export class AppComponent {
     else {
       this.displayCategory = !this.displayCategory;
     }
-    console.log('displayCategory value is ' + this.displayCategory);
     }
 
     setCategoryId (categoryId : number) {

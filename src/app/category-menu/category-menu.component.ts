@@ -15,8 +15,15 @@ export class CategoryMenuComponent implements OnInit {
   @Output() categoryDisplayClicked: EventEmitter<boolean | null> = new EventEmitter<boolean | null>();
   @Output() categorySet: EventEmitter<number> = new EventEmitter<number>();
 
+  toggleCategoryDisplay(boolValueDisplayCategory) {
+    console.log('toggleDisplayCategory clicked, value: ' + this.boolValueDisplayCategory);
+    this.categoryDisplayClicked.emit(boolValueDisplayCategory);
+  }
   
-  constructor() { }
+
+  constructor() {
+    console.log('category to display: ' + this.categoryIdToDisplay);
+   }
 
   ngOnInit(): void {
   }

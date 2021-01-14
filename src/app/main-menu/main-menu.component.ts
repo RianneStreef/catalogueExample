@@ -21,10 +21,10 @@ export class MainMenuComponent implements OnInit {
   }
 
   // setCategoryId (categoryId) {
-  //   this.categoryIdToDisplay.emit(categoryId);
+  //   this.categoryIdToDisplay.emit(this.categoryId);
   // }
 
-// re-add to main-menu template
+  // re-add to main-menu template
   // (categorySet)="setCategoryId($event)" 
 
 
