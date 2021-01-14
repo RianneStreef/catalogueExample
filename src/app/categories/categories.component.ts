@@ -12,22 +12,20 @@ export class CategoriesComponent implements OnInit {
 
   categories = CATEGORIES;
 
-  @Input() boolValueDisplayCategory: boolean;
-  @Input() categoryId: number;
   @Input() displayCategory: boolean;
-  @Input() categoryIdToDisplay: number;
 
   @Output() categoryDisplayClicked: EventEmitter<boolean | null> = new EventEmitter<boolean | null>();
   @Output() categorySet: EventEmitter<number> = new EventEmitter<number>();
 
   toggleCategoryDisplay(boolValueDisplayCategory) {
-    console.log('toggleDisplayCategory clicked, value: ' + this.boolValueDisplayCategory);
-    this.categoryDisplayClicked.emit(boolValueDisplayCategory);
+    console.log('toggleDisplayCategory clicked, value: ' + boolValueDisplayCategory);
+    //this.categoryDisplayClicked.emit(boolValueDisplayCategory);
+    this.displayCategory = boolValueDisplayCategory;
   }
 
 
   setCategoryId (categoryId) {
-    console.log('category to display: ' + this.categoryIdToDisplay);
+    console.log('category to display: ' + categoryId);
     this.categorySet.emit(categoryId);
   }
 

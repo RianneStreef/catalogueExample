@@ -10,7 +10,6 @@ export class MainMenuComponent implements OnInit {
   @Input() boolValueDisplayCategory: boolean;
   @Input() categoryId: number;
   @Input() displayCategory: boolean;
-  @Input() categoryIdToDisplay: number;
 
   @Output() categoryDisplayClicked: EventEmitter<boolean | null> = new EventEmitter<boolean | null>();
   @Output() categorySet: EventEmitter<number> = new EventEmitter<number>();
@@ -21,8 +20,9 @@ export class MainMenuComponent implements OnInit {
   }
 
   setCategoryId (categoryId) {
-    console.log('category to display: ' + this.categoryIdToDisplay);
-    this.categorySet.emit(categoryId);
+    console.log('category to display: ' + categoryId);
+    this.displayCategory= true;
+    this.categoryId = categoryId
   }
 
  

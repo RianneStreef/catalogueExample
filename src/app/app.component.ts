@@ -10,7 +10,7 @@ export class AppComponent {
   @Input() boolValueDisplayCategory: boolean;
   @Input() categoryId: number;
 
-  displayCategory = true;
+  displayCategory = false;
   categoryIdToDisplay = 1;
 
   toggleCategoryDisplay(boolValueDisplayCategory : boolean | null) {

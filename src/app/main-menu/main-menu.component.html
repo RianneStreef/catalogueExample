@@ -9,5 +9,7 @@
 </div>
 
 <ng-template #categories>
-  <app-categories></app-categories>
+  <app-categories
+  (categorySet)="setCategoryId($event)"
+  ></app-categories>
 </ng-template>
