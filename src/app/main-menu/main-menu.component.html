@@ -1,7 +1,7 @@
 <div *ngIf="displayCategory; else categories">
   <app-category-menu
     [displayCategory]="displayCategory"
-    [categoryIdToDisplay]="categoryToDisplay"
+    [categoryToDisplay]="categoryToDisplay"
     (categoryDisplayClicked)="toggleCategoryDisplay($event)"
     (categorySet)="setCategoryId($event)"
   >
@@ -9,10 +9,10 @@
 </div>
 
 <ng-template #categories>
-  <div *ngIf="!displayCategoryProducts; else product">
+  <div *ngIf="displayCategoryProducts; else product">
     <app-categories
       [displayCategory]="displayCategory"
-      [categoryIdToDisplay]="categoryToDisplay"
+      [categoryToDisplay]="categoryToDisplay"
       (categoryDisplayClicked)="toggleCategoryDisplay($event)"
       (categorySet)="setCategoryId($event)"
     >
@@ -21,8 +21,11 @@
 </ng-template>
 
 <ng-template #product>
-  <app-product
-    [displayCategoryProducts]="displayCategoryProducts"
-    [productToDisplay]="productToDisplay"
-  ></app-product>
+  <div *ngIf="!displayProductDetails">
+    <app-product
+      [displayCategoryProducts]="displayCategoryProducts"
+      [productToDisplay]="productToDisplay"
+      [displayProductDetails]="displayProductDetails"
+    ></app-product>
+  </div>
 </ng-template>

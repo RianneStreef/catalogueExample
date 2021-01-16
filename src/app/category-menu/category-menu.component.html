@@ -2,8 +2,18 @@
 
 <p>
   category-menu works! THIS IS WHERE ALL THE ITEMS OF THIS MENU WILL BE
-  DISPLAYED
+  DISPLAYED {{ items }}
 </p>
+<ul *ngFor="let item of items">
+  <li *ngIf="item.type == categoryToDisplay">
+    <div (click)="openDetailPage()">
+      <p>
+        {{ item.itemTitle }}
+      </p>
+      <img src="{{ item.itemImgUrl }}" />
+    </div>
+    <!-- <p>{{ category.intro }}</p> -->
+  </li>
 
-<!-- <li *ngIf="item.type === categoryToDisplay"></li> -->
-<!-- </div> -->
+  <!-- </div> -->
+</ul>

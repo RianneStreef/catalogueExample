@@ -12,8 +12,9 @@ export class AppComponent {
   @Input() boolValueDisplayProducts: boolean;
 
   displayCategory = false;
-  categoryToDisplay = 'Balls';
+  categoryToDisplay = 'balls';
   displayCategoryProducts = false;
+  displayProductDetails = false;
   productToDisplay = 1;
 
   toggleCategoryDisplay(boolValueDisplayCategory : boolean | null) {
@@ -28,7 +29,7 @@ export class AppComponent {
     else {
       this.displayCategory = !this.displayCategory;
     }
-    }
+  }
 
     setCategoryId (categoryId : string) {
       this.categoryToDisplay = categoryId;
