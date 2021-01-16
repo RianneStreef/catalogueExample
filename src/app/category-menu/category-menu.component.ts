@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Item } from "item";
 import { ITEMS } from 'items';
 
 @Component({
@@ -8,16 +9,16 @@ import { ITEMS } from 'items';
 })
 export class CategoryMenuComponent implements OnInit {
 
-  items = ITEMS;
-
-  // for let item of items
-  // filterargs = {item.type = 'balls'}
+  items: Item[] = ITEMS;
 
 
   @Input() boolValueDisplayCategory: boolean;
   @Input() categoryId: number;
   @Input() displayCategory: boolean;
-  @Input() categoryIdToDisplay: string;
+  @Input() categoryToDisplay: string;
+  @Input() displayCategoryProducts: boolean;
+  @Input() displayProductDetails : boolean;
+
 
   @Output() categoryDisplayClicked: EventEmitter<boolean | null> = new EventEmitter<boolean | null>();
   @Output() categorySet: EventEmitter<number> = new EventEmitter<number>();
@@ -27,12 +28,20 @@ export class CategoryMenuComponent implements OnInit {
     this.categoryDisplayClicked.emit(boolValueDisplayCategory);
   }
   
+  openDetailPage(){
+    this.displayCategoryProducts = false;
+    console.log('display categories? ' + this.displayCategoryProducts)
+    this.displayProductDetails = true;
 
+  }
   constructor() {
-    console.log('category to display: ' + this.categoryIdToDisplay);
+
    }
 
   ngOnInit(): void {
+    console.log('category to display: ' + this.categoryToDisplay);
+    console.log('item.type = ' + this.items[3].itemTitle);
+    console.log(this.items);
   }
 
 }

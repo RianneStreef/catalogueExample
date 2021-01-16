@@ -11,8 +11,9 @@ export class MainMenuComponent implements OnInit {
   @Input() categoryId: number;
   @Input() displayCategory: boolean;
   @Input() categoryToDisplay: number;
-  @Input() displayCategoryProducts: number;
+  @Input() displayCategoryProducts: boolean;
   @Input() productToDisplay: number;
+  @Input() displayProductDetails : boolean;
 
   @Output() categoryDisplayClicked: EventEmitter<boolean | null> = new EventEmitter<boolean | null>();
   @Output() categorySet: EventEmitter<number> = new EventEmitter<number>();
@@ -33,12 +34,11 @@ export class MainMenuComponent implements OnInit {
  
 
 
-  constructor() { 
-    console.log(this.productToDisplay)
-
-  }
+  constructor() {}
 
   ngOnInit(): void {
+    console.log('product to display ' + this.productToDisplay)
+    console.log('category ' + this.categoryToDisplay) 
   }
 
 }

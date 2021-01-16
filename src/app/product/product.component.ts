@@ -9,9 +9,11 @@ export class ProductComponent implements OnInit {
 
   @Input() displayCategoryProducts: number;
   @Input() productToDisplay: number;
+  @Input() displayProductDetails : boolean;
+
 
   constructor() {
-    console.log(this.productToDisplay)
+    console.log("product to display " + this.productToDisplay)
 
    }
 
