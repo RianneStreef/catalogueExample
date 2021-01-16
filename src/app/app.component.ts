@@ -8,10 +8,13 @@ import { Component, Input } from '@angular/core';
 export class AppComponent {
 
   @Input() boolValueDisplayCategory: boolean;
-  @Input() categoryId: number;
+  @Input() categoryId: string;
+  @Input() boolValueDisplayProducts: boolean;
 
-  displayCategory = true;
-  categoryIdToDisplay = 1;
+  displayCategory = false;
+  categoryToDisplay = 'Balls';
+  displayCategoryProducts = false;
+  productToDisplay = 1;
 
   toggleCategoryDisplay(boolValueDisplayCategory : boolean | null) {
     console.log('displayCategory value is ' + this.displayCategory);
@@ -27,9 +30,9 @@ export class AppComponent {
     }
     }
 
-    setCategoryId (categoryId : number) {
-      this.categoryIdToDisplay = categoryId;
-      console.log('category to display ' + this.categoryIdToDisplay);
+    setCategoryId (categoryId : string) {
+      this.categoryToDisplay = categoryId;
+      console.log('category to display ' + this.categoryToDisplay);
     }
 
 }
