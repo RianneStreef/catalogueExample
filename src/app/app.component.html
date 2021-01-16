@@ -1,7 +1,9 @@
 <app-header></app-header>
 <app-main-menu
   [displayCategory]="displayCategory"
-  [categoryIdToDisplay]="categoryIdToDisplay"
+  [categoryToDisplay]="categoryToDisplay"
+  [displayCategoryProducts]="displayCategoryProducts"
+  [productToDisplay]="productToDisplay"
   (categoryDisplayClicked)="toggleCategoryDisplay($event)"
   (categorySet)="setCategoryId($event)"
 ></app-main-menu>

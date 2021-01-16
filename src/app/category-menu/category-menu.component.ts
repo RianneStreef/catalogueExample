@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ITEMS } from 'items';
 
 @Component({
   selector: 'app-category-menu',
@@ -7,10 +8,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CategoryMenuComponent implements OnInit {
 
+  items = ITEMS;
+
+  // for let item of items
+  // filterargs = {item.type = 'balls'}
+
+
   @Input() boolValueDisplayCategory: boolean;
   @Input() categoryId: number;
   @Input() displayCategory: boolean;
-  @Input() categoryIdToDisplay: number;
+  @Input() categoryIdToDisplay: string;
 
   @Output() categoryDisplayClicked: EventEmitter<boolean | null> = new EventEmitter<boolean | null>();
   @Output() categorySet: EventEmitter<number> = new EventEmitter<number>();
