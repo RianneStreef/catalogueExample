@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Item } from "item";
 import { ITEMS } from 'items';
+import { CATEGORIES } from '../categories';
+
+
 
 @Component({
   selector: 'app-category-menu',
@@ -8,6 +11,9 @@ import { ITEMS } from 'items';
   styleUrls: ['./category-menu.component.scss']
 })
 export class CategoryMenuComponent implements OnInit {
+
+  // items = ITEMS;
+  categories = CATEGORIES;
 
   items: Item[] = ITEMS;
 
@@ -34,6 +40,15 @@ export class CategoryMenuComponent implements OnInit {
     this.displayProductDetails = true;
 
   }
+
+  // filterItems() {
+  //   let itemsToFilter = this.items; 
+
+  //   let filteredItems = (categoryToDisplay, itemsToFilter) => itemsToFilter.filter(itemsToFilter.type === this.categoryToDisplay)
+  // }
+
+
+
   constructor() {
 
    }

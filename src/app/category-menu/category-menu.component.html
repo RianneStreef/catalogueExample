@@ -4,16 +4,24 @@
   category-menu works! THIS IS WHERE ALL THE ITEMS OF THIS MENU WILL BE
   DISPLAYED {{ items }}
 </p>
-<ul *ngFor="let item of items">
-  <li *ngIf="item.type == categoryToDisplay">
-    <div (click)="openDetailPage()">
-      <p>
-        {{ item.itemTitle }}
-      </p>
-      <img src="{{ item.itemImgUrl }}" />
-    </div>
-    <!-- <p>{{ category.intro }}</p> -->
-  </li>
 
-  <!-- </div> -->
-</ul>
+<div *ngFor="let item of items">
+  <p>{{ item.intro }}</p>
+</div>
+
+<!-- <div *ngFor="let item of items | customFilter:filtercond" >
+  <h2>{{ item.itemTitle }}</h2>
+  <img src="{{ item.itemImgUrl }}" />
+</div> -->
+
+<div *ngFor="let item of items.filter(item.type === categoryToDisplay)">
+  <h2>{{ item.itemTitle }}</h2>
+  <img src="{{ item.itemImgUrl }}" />
+</div>
+
+<!-- <p>{{ category.intro }}</p> -->
+<!-- </div> -->
+
+<!-- class="product-card" (click)="openDetailPage()" -->
+<!-- <div *ngIf="item.type == categoryToDisplay"> -->
+<!-- </div> -->

@@ -13,7 +13,7 @@ import { Item } from 'item';
 export class CategoriesComponent implements OnInit {
 
   categories = CATEGORIES;
-  items: Item[] = ITEMS;
+  // items: Item[] = ITEMS;
 
   @Input() boolValueDisplayCategory: boolean;
   @Input() categoryId: number;

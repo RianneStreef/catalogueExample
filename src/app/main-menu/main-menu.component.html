@@ -9,7 +9,7 @@
 </div>
 
 <ng-template #categories>
-  <div *ngIf="displayCategoryProducts; else product">
+  <div *ngIf="!displayCategoryProducts; else product">
     <app-categories
       [displayCategory]="displayCategory"
       [categoryToDisplay]="categoryToDisplay"
@@ -21,7 +21,7 @@
 </ng-template>
 
 <ng-template #product>
-  <div *ngIf="!displayProductDetails">
+  <div *ngIf="displayProductDetails">
     <app-product
       [displayCategoryProducts]="displayCategoryProducts"
       [productToDisplay]="productToDisplay"

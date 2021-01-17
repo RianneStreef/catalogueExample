@@ -4,4 +4,5 @@ export interface Item {
   itemImgUrl: string;
   itemTitle: string;
   detailPage: string;
+  intro: string;
 }
